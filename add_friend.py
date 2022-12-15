@@ -11,6 +11,7 @@ options.add_argument(r'--user-data-dir=D:\\a tool\\profile_tds\\User Data')
 options.add_argument('profile-directory=Profile 3')
 options.add_argument('--mute-audio')
 driver = webdriver.Chrome(executable_path=r'C:\\Program Files\\Google\Chrome\\Application\\chromedriver.exe', options=options)
+
 # driver.maximize_window()
 # from selenium import webdriver # thêm thư viện webdriver
 # from selenium.webdriver.common.keys import Keys #thêm thư viện keys cho máy
@@ -40,6 +41,16 @@ driver = webdriver.Chrome(executable_path=r'C:\\Program Files\\Google\Chrome\\Ap
 
 
 df = pd.read_csv('D:\\a tool\\DATACT\\data_cantho.csv')
+# print((df.duplicated()).to_string())
+
+# remove data duplicates (xóa các cột trùng lặp)
+df.drop_duplicates(inplace= True)
+# print(dt.duplicated())
+
+# saved_column = df['Link']
+# print(saved_column)
+# exit()
+
 tep_ghigoikb = open('D:\\a tool\\DATACT\\data_cantho_dagoikb.txt','a+',encoding='utf')
 # print(df)
 saved_column = df['Link'] #you can also use df['column_name']
@@ -118,8 +129,7 @@ for link in link_list:
 			pass
 
 
-	
-
-
+#quit broswer when you requests all member in file data_cantho.csv
+driver.quit()
 
 

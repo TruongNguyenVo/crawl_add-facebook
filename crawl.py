@@ -5,7 +5,7 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.common.by import By
 os.system('title Crawl_Data')
 #https://www.facebook.com/groups/ReviewAnUongCanTho/posts/1133272720708413/
-link_crawl = 'https://www.facebook.com/groups/ReviewAnUongCanTho/posts/1135324213836597/'
+link_crawl = input("nhập link cần crawl: ")
 
 
 
@@ -13,43 +13,43 @@ link_crawl = 'https://www.facebook.com/groups/ReviewAnUongCanTho/posts/113532421
 # #Khai báo browser
 # browser = webdriver.Chrome(executable_path= 'C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe')
 
-# # #mở chrome profile 3- Profile Cần Thơ
-# options = webdriver.ChromeOptions()
-# options.add_argument(r'--user-data-dir=D:\\a tool\\profile_tds\\User Data')
-# options.add_argument('profile-directory=Profile 3')
-# options.add_argument('--mute-audio')
-# driver = webdriver.Chrome(executable_path=r'C:\\Program Files\\Google\Chrome\\Application\\chromedriver.exe', options=options)
-# # driver.maximize_window() #khong set full man hinh
-# ###options.headless = True # chạy ngầm
+# #mở chrome profile 3- Profile Cần Thơ
+options = webdriver.ChromeOptions()
+options.add_argument(r'--user-data-dir=D:\\a tool\\profile_tds\\User Data')
+options.add_argument('profile-directory=Profile 3')
+options.add_argument('--mute-audio')
+driver = webdriver.Chrome(executable_path=r'C:\\Program Files\\Google\Chrome\\Application\\chromedriver.exe', options=options)
+# driver.maximize_window() #khong set full man hinh
+###options.headless = True # chạy ngầm
 
 
 
 ## You must click allow or not allow in selenium driver if you dont use profile chrome
-from selenium import webdriver # thêm thư viện webdriver
-from selenium.webdriver.common.keys import Keys #thêm thư viện keys cho máy
+# from selenium import webdriver # thêm thư viện webdriver
+# from selenium.webdriver.common.keys import Keys #thêm thư viện keys cho máy
 
-tk ="vohoangduy0596@gmail.com"
-mk ="08nguyen16396742"
+# tk ="vohoangduy0596@gmail.com"
+# mk ="08nguyen16396742"
 
-# mở chrome lên
-driver = webdriver.Chrome(executable_path=r"C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe")
-driver.set_window_size(700,1000)
+# # mở chrome lên
+# driver = webdriver.Chrome(executable_path=r"C:\\Program Files\\Google\\Chrome\\Application\\chromedriver.exe")
+# driver.set_window_size(700,1000)
 
-#mở trang web
-driver.get("https://www.facebook.com")
+# #mở trang web
+# driver.get("https://www.facebook.com")
 
-#điền tài khoản
+# #điền tài khoản
 
-user = driver.find_element_by_id("email") #tìm kiểu của tài khoản(sau chữ id)
-user.send_keys(tk)#điền tài khoản
-time.sleep(5)
-#điền mật khẩu
-password = driver.find_element_by_id("pass") #tìm kiểu của mật khẩu(sau chữ id)
-password.send_keys(mk) #điền mật khẩu
-time.sleep(5)
-#nhấn enter
-password.send_keys(Keys.ENTER)
-time.sleep(5)
+# user = driver.find_element_by_id("email") #tìm kiểu của tài khoản(sau chữ id)
+# user.send_keys(tk)#điền tài khoản
+# time.sleep(5)
+# #điền mật khẩu
+# password = driver.find_element_by_id("pass") #tìm kiểu của mật khẩu(sau chữ id)
+# password.send_keys(mk) #điền mật khẩu
+# time.sleep(5)
+# #nhấn enter
+# password.send_keys(Keys.ENTER)
+# time.sleep(5)
 
 # mở trang facebook cần crawl
 time.sleep(10)
@@ -74,7 +74,8 @@ time.sleep(4)
 ### You must click allow or not allow in selenium driver if you dont use profile chrome
 try:
 
-	driver.find_element(By.XPATH,'/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div/div[3]/div/div/div[4]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div[8]/div/div[4]/div/div/div[2]/div[2]/div/div/div/span').click()
+	driver.find_element(By.XPATH,'/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div/div[3]/div/div/div[4]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div[8]/div/div/div[4]/div/div/div[2]/div[2]/div/div/div/span').click()
+								  
 								 # '/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div/div[3]/div/div/div[4]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div[8]/div/div[4]/div/div/div[2]/div[2]/div[2]/div/div/span'
 								 # '/html/body/div[1]/div/div[1]/div/div[3]/div/div/div/div[1]/div[1]/div/div[3]/div/div/div[4]/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div/div[8]/div/div[4]/div/div/div[2]/div[2]/div/div/div/span'
 except:
